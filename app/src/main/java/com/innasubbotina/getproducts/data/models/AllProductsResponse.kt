@@ -1,4 +1,4 @@
-package com.innasubbotina.productapp.data.models
+package com.innasubbotina.getproducts.data.models
 
 import com.google.gson.annotations.SerializedName
 

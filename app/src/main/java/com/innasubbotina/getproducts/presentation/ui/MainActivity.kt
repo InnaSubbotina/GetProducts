@@ -1,8 +1,8 @@
-package com.innasubbotina.getproducts
+package com.innasubbotina.getproducts.presentation.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.innasubbotina.getproducts.presentation.ui.MainFragment
+import androidx.appcompat.app.AppCompatActivity
+import com.innasubbotina.getproducts.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,4 +17,3 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
-

@@ -1,4 +1,4 @@
-package com.innasubbotina.productapp.data.network
+package com.innasubbotina.getproducts.data.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -23,5 +23,7 @@ object ApiFactory {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
     }
+
+
 }
 

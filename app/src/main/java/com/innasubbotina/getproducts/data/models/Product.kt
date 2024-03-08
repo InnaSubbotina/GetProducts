@@ -1,4 +1,4 @@
-package com.innasubbotina.productapp.data.models
+package com.innasubbotina.getproducts.data.models
 
 data class Product(
     val id: Int,
