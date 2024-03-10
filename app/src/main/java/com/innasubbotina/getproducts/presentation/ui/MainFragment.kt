@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.innasubbotina.getproducts.R
 import com.innasubbotina.getproducts.databinding.FragmentMainBinding
 import com.innasubbotina.getproducts.data.network.ApiFactory
 import com.innasubbotina.getproducts.data.network.ProductsApiService
@@ -33,14 +33,14 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rcViewProducts.layoutManager = LinearLayoutManager(activity)
-        getAllProducts()
+        loadAllProducts()
         //binding.rcViewProducts.layoutManager = LinearLayoutManager(activity)
         //adapter = ProductAdapter()
         //binding.rcViewProducts.adapter = adapter
 
     }
 
-    private fun getAllProducts(){
+    private fun loadAllProducts(){
         val retrofit = ApiFactory.build()
         val productApi = retrofit.create(ProductsApiService::class.java)
         val disposable = productApi.getAllProducts()
@@ -52,11 +52,12 @@ class MainFragment : Fragment() {
                 binding.rcViewProducts.adapter = adapter
             },{
                 //когда нет интернета переходит на экран ошибки
-                requireActivity().supportFragmentManager
+                Toast.makeText(context,"нет ответа от сервера",Toast.LENGTH_SHORT).show()
+                /*requireActivity().supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.myHolder, ProductDetailsFragment.newInstance())
                     .addToBackStack(null)
-                    .commit()
+                    .commit()*/
             })
         compositeDisposable.add(disposable)
     }

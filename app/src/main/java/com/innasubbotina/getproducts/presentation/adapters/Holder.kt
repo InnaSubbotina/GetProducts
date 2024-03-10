@@ -13,6 +13,7 @@ class Holder(view: View) : RecyclerView.ViewHolder(view) {
         //imViewUser.setImageResource(R.drawable.gus)
         tvName.text = product.title
         tvDescription.text = product.description
+        tvRating.text = product.rating.toString()
         Picasso.get().load(product.thumbnail).into(imViewProduct)
     }
 }
