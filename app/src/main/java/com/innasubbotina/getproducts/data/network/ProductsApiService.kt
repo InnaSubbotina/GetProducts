@@ -11,6 +11,12 @@ interface ProductsApiService {
         @Query(QUERY_PARAM_LIMIT) limit: Int = 20
     ) : Single<AllProductsResponse>
 
+    @GET("products/search")
+    fun searchProducts(
+        @Query("q") name: String
+    ) : Single<AllProductsResponse>
+
+
     companion object{
         private const val QUERY_PARAM_LIMIT = "limit"
     }
