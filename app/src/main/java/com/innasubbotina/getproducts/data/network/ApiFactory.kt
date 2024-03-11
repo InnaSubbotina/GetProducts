@@ -7,7 +7,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiFactory {
-
     private const val baseUrl = "https://dummyjson.com/"
     fun build(): Retrofit {
         val interceptor = HttpLoggingInterceptor()
@@ -23,7 +22,5 @@ object ApiFactory {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
     }
-
-
 }
 

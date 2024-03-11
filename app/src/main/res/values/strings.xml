@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">GetProducts</string>
-    <string name="search_by_prod">Поиск по продукту...</string>
     <string name="description">Описание продукта</string>
     <string name="title">Заголовок</string>
+    <string name="error">Сервер не отвечает</string>
+    <string name="search_by_product">Поиск по продукту…</string>
 </resources>

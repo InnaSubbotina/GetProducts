@@ -1,5 +1,6 @@
 package com.innasubbotina.getproducts.presentation.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,28 +12,23 @@ import com.innasubbotina.getproducts.data.models.Product
 import com.innasubbotina.getproducts.databinding.FragmentProductDetailsBinding
 import com.squareup.picasso.Picasso
 
-
 class ProductDetailsFragment : Fragment() {
     private lateinit var binding: FragmentProductDetailsBinding
     private var product: Product? = null
     private val navController by lazy {
         findNavController()
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         product = arguments?.getSerializable("prod") as Product
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentProductDetailsBinding.inflate(layoutInflater,container,false)
         return binding.root
-
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setProductData()
@@ -40,20 +36,11 @@ class ProductDetailsFragment : Fragment() {
             navController.navigate(R.id.mainFragment)
         }
     }
-
+    @SuppressLint("SetTextI18n")
     private fun setProductData() = with(binding) {
         Picasso.get().load(product?.thumbnail).into(imProduct)
         tvTitle.text = product?.title
         tvDescription.text = product?.description
-        tvPrice.text = product?.price.toString()
-
+        tvPrice.text = "$" + product?.price.toString()
     }
-
-
-   /* companion object {
-        fun newInstance(): ProductDetailsFragment {
-            return ProductDetailsFragment()
-        }
-    }*/
-
 }

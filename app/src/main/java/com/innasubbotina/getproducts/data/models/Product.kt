@@ -1,7 +1,6 @@
 package com.innasubbotina.getproducts.data.models
 
 import java.io.Serializable
-
 data class Product(
     val id: Int,
     val title: String,

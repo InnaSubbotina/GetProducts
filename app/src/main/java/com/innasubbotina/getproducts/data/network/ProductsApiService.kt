@@ -4,7 +4,6 @@ import com.innasubbotina.getproducts.data.models.AllProductsResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
-
 interface ProductsApiService {
     @GET("products")
     fun getAllProducts(
@@ -15,8 +14,7 @@ interface ProductsApiService {
     fun searchProducts(
         @Query("q") name: String
     ) : Single<AllProductsResponse>
-
-    companion object{
+    companion object {
         private const val QUERY_PARAM_LIMIT = "limit"
     }
 }
