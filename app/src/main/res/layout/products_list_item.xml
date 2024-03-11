@@ -13,7 +13,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imView_product"
+            android:id="@+id/im_product"
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:scaleType="centerCrop"

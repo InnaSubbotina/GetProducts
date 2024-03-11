@@ -16,7 +16,6 @@ interface ProductsApiService {
         @Query("q") name: String
     ) : Single<AllProductsResponse>
 
-
     companion object{
         private const val QUERY_PARAM_LIMIT = "limit"
     }

@@ -9,11 +9,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager
+       /* supportFragmentManager
             .beginTransaction()
             .add(R.id.myHolder, MainFragment.newInstance())
             .addToBackStack(null)
-            .commit()
+            .commit()*/
 
     }
 }
